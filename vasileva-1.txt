@@ -1,0 +1,12 @@
+@startuml
+skinparam class { 
+BackgroundColor White 
+ArrowColor Black 
+BorderColor Black 
+} 
+class "Покупатель" as Покупатель { 
+ПО
+Покупка авиабилета. (Необходимый маршрут, Желаемая дата и время вылета) 
+} 
+hide circle
+@enduml
