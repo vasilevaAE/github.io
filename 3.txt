@@ -1,0 +1,23 @@
+@startuml
+actor "пользователь" as u
+participant "Сбор данных" as gd
+database "БД с расписанием рейсов" as db
+participant "Оплата" as c
+participant "Выдача билета" as dropb
+
+activate gd
+  u -> gd : Ввод даты и маршрута
+  gd -> db : Поиск рейсов в БД
+activate db
+  db -> gd : Выдача рейсов
+deactivate db
+  gd -> u : Получение нужного рейса
+deactivate gd
+u -> c : Оплата
+activate c
+  c -> dropb : Формирование билета
+deactivate c
+activate dropb
+  dropb -> u : Получение билета
+deactivate dropb
+@enduml
