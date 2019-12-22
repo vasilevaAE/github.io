@@ -1,0 +1,33 @@
+@startuml
+skinparam class {
+	BackgroundColor White
+	ArrowColor Black
+	BorderColor Black
+}
+class Modules as "Модуль"
+
+
+class In as "Внутренний"
+class Out as "Внешний"
+
+class Analayze as "список неисправностей"
+class Report as "блок памяти(с инструкциями)"
+
+class HR as "определение и занесение неисправностей"
+class Key as "передача выявленных неисправностей"
+
+
+Modules<|-- In
+Modules<|-- Out
+
+In<|-- Analayze 
+In<|-- Report 
+
+Out<|-- HR 
+Out<|--Key 
+
+
+hide members
+hide circle
+hide methods
+@enduml
