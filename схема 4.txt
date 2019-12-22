@@ -1,0 +1,16 @@
+@startuml
+actor "пользователь" as u
+participant "определение неисравностей" as gd
+
+participant "передача выявленных неисправностей" as c
+
+
+activate gd
+  u -> gd : изделие
+gd-> c : неисправности
+deactivate gd
+
+activate c
+c->u: список неисправностей
+deactivate c
+@enduml
